@@ -1,0 +1,68 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+.mainc {
+    
+    width: 70%;
+    margin: 10rem auto 10rem auto;
+
+    &__grid {
+        margin: 10rem auto 10rem auto;
+        @include m.grid(1, 1fr);
+        gap: 2rem;
+
+        @include m.tablet{
+            @include m.grid(2, 1fr);
+        }
+    }
+
+    &__card {
+        @include m.bgImage('../img/fondo-este.jpg');
+        width: 100%;
+        height: 40rem;
+        margin: 0 auto;
+        border-radius: 1rem;
+        
+        @include m.flex(flex, column, space-around, center);
+    }
+
+    &__imgc {
+        width: auto;
+        height: 10rem;
+    }
+
+    &__textoc {
+        color: v.$blanco;
+        font-weight: 400;
+        font-size: 3rem;
+    }
+
+    &__textoc1 {
+        width: 80%;
+        color: v.$blanco;
+        font-weight: 400;
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    &__logosc {
+        width: 100%;
+        @include m.flex(flex, column, space-around, center);
+
+        @include m.tablet {
+            @include m.flex(flex, row, space-around, center);
+        }
+    }
+
+    &__imgl {
+    width: 20rem;
+    height: auto;
+    margin-top: 2rem;
+    }
+
+    @include m.tablet {
+        margin-top: 0;
+    }
+
+}

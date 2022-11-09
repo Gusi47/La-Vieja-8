@@ -1,0 +1,64 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+
+.colage {
+    @include m.bgImage('../img/fondo-este.jpg');
+    width: 100%;
+    height: 70vh;
+   
+  
+    @include m.flex(flex, column, space-evenly, center);
+
+    @include m.tablet{
+        @include m.flex(flex, row, center, center);
+        width: 100%;
+        height: 100vh;
+        
+    }
+
+    &__img4 {
+       width: 80%;
+       margin-bottom: 3rem;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       
+    }
+
+    &__fotoi4 {
+     width:  clamp(50rem, 60vw, 70rem);
+     height: auto;
+     margin: 0;
+
+    }
+
+    &__contecolage {
+        @include m.flex(flex, column, space-evenly, center);
+
+        @include m.tablet{
+            @include m.flex(flex, column, center, center);
+
+        }
+    }
+
+    &__h24 {
+        font-size: clamp(2rem, 2vw, 3rem);
+        font-weight: 900;
+        color: v.$blanco;
+    }
+
+    &__parrafo4 {
+        color: v.$blanco;
+        font-size: clamp(1.5rem, 2vw, 2rem);
+        font-weight: 300;
+        text-align: center;
+        padding: 3rem;
+
+        @include m.tablet{
+         padding: 3rem;
+        }
+    
+    }
+}

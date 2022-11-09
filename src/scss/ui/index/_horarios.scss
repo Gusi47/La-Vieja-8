@@ -1,0 +1,25 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+
+.horarios {
+    @include m.bgImage('../img/horario-2.jpg');
+    width: auto;
+    height: clamp(20rem, 50vw, 60rem);
+ 
+
+    &__texto3 {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__h4 {
+        font-size: clamp(1.7rem, 3vw, 4rem);
+        color: v.$blanco;
+        text-align: center;
+       
+    }
+}

@@ -1,0 +1,99 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+.mainm {
+   
+    &__tituloh1 {
+        width: 100%;
+        height: 80vh;
+        @include m.bgImage('../img/menu-2.jpg');
+        background-color: red;
+        background-attachment: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+        
+    &__h1m {
+        
+        color: v.$blanco;
+        font-size: clamp(4rem, 6vw, 8rem);
+        text-align: center;
+       
+        font-weight: 900;
+    }
+
+    &__grupo {
+        margin: clamp(4rem, 7vw, 9rem) 0 clamp(4rem, 7vw, 9rem) 0;
+    }
+
+    &__h3m {
+        text-align: center;
+       
+        font-size: clamp(3rem, 4vw, 5rem);
+        text-transform: uppercase;
+        font-weight: 900;
+        color: v.$negro;
+        margin-bottom: 3rem;
+    }
+
+    &__grid {
+        background-color: v.$bordo;
+        @include m.bgImage('../img/fondo-este.jpg');
+        border-radius: 1rem;
+        width: 90%;
+        margin: 0 auto;
+        @include m.grid(1, 1fr);
+
+        @include m.tablet{
+            @include m.grid(3, 1fr);
+        }
+    }
+
+
+    &__contenedor {
+        @include m.flex(flex, column, center, center);
+        margin: clamp(2rem, 5vw, 7rem) 0 clamp(2rem, 5vw, 7rem) 0;
+    }
+
+    &__titulo {
+        width: 100%;
+        height: auto;
+        @include m.flex(flex, row, center, flex-start);
+    }
+
+    &__imgm {
+        width: 4rem;
+        height: auto;
+        margin-right: 1.5rem;
+       
+    }
+
+    &__h2m{
+        color: v.$blanco;
+        margin-top: 1rem;
+        font-size: clamp(1.8rem, 2vw, 3rem);
+
+        @include m.tablet {
+            margin-top: 0;
+        }
+    }
+    
+    &__textom {
+        color: v.$blanco;
+        padding: 1.5rem;
+    }
+
+    &__parrafom2 {
+        color: v.$blanco;
+        text-align: center;
+        font-size: clamp(1rem, 1.2vw, 1.8rem);
+    }
+    &__parrafom {
+        color: v.$blanco;
+        text-align: center;
+        padding: 0 1.5rem 0 1.5rem;
+        font-size: clamp(1.4rem, 2vw, 2rem);
+    }
+}

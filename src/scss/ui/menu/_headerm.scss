@@ -1,0 +1,117 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.hero{
+        &__nav{
+            @include m.bgImage('../img/verduras-header-2.jpg');
+            
+            --state-close: scale(0);
+            --state-hamburguer:scale(1);
+            --state-menu: translate(-100%);
+
+            padding: 1rem 0 1rem 0;
+            display: grid;
+            justify-content: space-between;
+            align-items: center;
+            grid-template-columns: repeat(2, max-content);
+
+            &:target{
+                --state-menu: translate(0);
+                --state-close: scale(1);
+                --state-hamburguer:scale(0);
+            }
+
+            @include m.tablet {
+                --state-hamburguer:scale(0);
+                --state-menu: translate(0);
+
+                &:target{
+                    --state-close: scale(1);
+                }
+            }
+        }
+
+        &__fotoh {
+            width: auto;
+            height: 8rem;
+          
+         
+            @include m.tablet {
+                height: 16rem;
+            }
+        }
+
+        &__hamburguer, 
+        &__close {
+            z-index: 90;
+            cursor: pointer;
+            grid-column: -2/-1;
+            grid-row: 1/2;
+            transition: .4s transform;
+        }
+
+        &__hamburguer{
+            transform: var(--state-hamburguer);
+        }
+
+        &__close{
+            transform: var(--state-close);
+        }
+
+        &__icon{
+            
+            width: 4rem;
+        }
+
+        &__links{
+            @include m.bgImage('../img/fondo-este.jpg');
+            z-index: 80;
+           
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 0;
+            display: grid;
+            align-content: center;
+            gap: 2em;
+            padding-left: 5%;
+            transform: var(--state-menu);
+            transition: .3s transform;
+
+            @include m.tablet {
+                padding: 0;
+                background-image: unset;
+                position: unset;
+                gap: 1.5em;
+                grid-auto-flow: column;
+                transform: unset;
+                grid-column: -2/-1;
+                grid-row: 1/2;
+            }
+        }
+
+        &__item{
+            list-style: none;
+        }
+
+        &__link{
+            color: v.$blanco;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 2.5rem;
+            padding: 1.5 0 1.5 0;
+            font-weight: 500;
+           
+
+            @include m.tablet {
+                font-size: 1.7rem;
+                letter-spacing: none;
+                margin: 0 2rem 0 2rem;
+                color: v.$blanco;
+                
+            }
+    }
+
+}

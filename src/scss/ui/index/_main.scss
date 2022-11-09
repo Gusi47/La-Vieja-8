@@ -1,0 +1,144 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.mainh {
+    @include m.bgImage('../img/fondo-main.jpg');
+    padding: 10rem 0 0 0;
+}
+
+.main1 {
+   
+    width: 100%;
+   
+    &__contei {
+        @include m.flex(flex, column, center, center);
+       
+        @include m.tablet{
+            @include m.grid(2, 1fr);
+        }
+    }
+
+    &__textoi {
+        @include m.flex(flex, row, center, center);
+
+    }
+
+    &__letras1 {
+        background-attachment: fixed;
+        padding: 2rem;
+        text-align: center;
+    }
+
+    
+    &__fotoi1 {
+        width: auto;
+        height: 40rem;
+        display: none;
+
+
+        @include m.tablet{
+            display: flex;
+        }
+
+    }
+
+    &__h21 {
+        color: v.$blanco;
+        font-size: clamp(1.8rem, 4vw, 6rem);
+        font-weight: 900;
+        text-transform: uppercase;
+        margin-bottom: 3rem;
+    }
+    
+    &__parrafo1 {
+        color: v.$blanco;
+        font-weight: 300;
+        font-size: clamp(1.5rem, 2vw, 2rem);
+    }
+
+    &__enlace1 {
+        color: v.$bordo;
+        font-size: clamp(1.8rem, 2vw, 2.5rem);
+        text-transform: uppercase;
+        margin-top: 3rem;
+        padding: 1.2rem;
+        display: inline-block;
+        transition: 300ms;
+
+        &:hover {
+            color: v.$blanco;
+            padding: 1.2rem;
+            background-color: v.$bordo;
+           border-radius: 1rem;
+        }
+    }
+
+}
+
+
+.main2 {
+    width: 100%;
+ 
+    &__contei2 {
+        @include m.flex(flex, column-reverse, center, center);
+
+        @include m.tablet{
+            @include m.grid(2, 1fr);
+
+        }
+    }
+
+    &__textoi2{
+        @include m.flex(flex, row, center, center);
+
+    }
+
+    &__letras2 {
+        padding: 2rem;
+        text-align: center;
+    }
+
+    &__fotoi2 {
+        width: auto;
+        height: 40rem;
+        display: none;
+
+        @include m.tablet{
+            display: flex;
+        }
+
+    }
+
+    &__h22 {
+        color: v.$blanco;
+        font-size: clamp(1.8rem, 4vw, 6rem);
+        font-weight: 900;
+        text-transform: uppercase;
+        margin-bottom: 3rem;
+    }
+
+    &__parrafo2 {
+        color: v.$blanco;
+        font-weight: 300;
+        font-size: clamp(1.5rem, 2vw, 2rem);
+        
+    }
+
+    &__enlace2 {
+        color: v.$bordo;
+        font-size: clamp(1.8rem, 2vw, 2.5rem);
+        text-transform: uppercase;
+        margin-top: 3rem;
+        padding: 1.2rem;
+        display: inline-block;
+        transition: 300ms;
+
+        &:hover {
+            color: v.$blanco;
+            padding: 1.2rem;
+            background-color: v.$bordo;
+           border-radius: 1rem;
+        }
+    }
+
+}
